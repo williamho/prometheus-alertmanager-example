@@ -1,6 +1,5 @@
 package com.example
 
-import akka.util.ByteString
 import io.prometheus.client._
 import io.prometheus.client.exporter.common.TextFormat
 import java.io.Writer
@@ -24,7 +23,7 @@ class Components(port: Int) extends NettyServerComponents
     .register()
 
   lazy val router = Router.from {
-    // Hitting this endpoint will increment 
+    // Hitting this endpoint will increment the example_counter
     case GET(p"/") =>
       counter.inc()
       Action(Ok("Hello"))

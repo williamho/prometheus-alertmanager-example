@@ -62,12 +62,12 @@ docs for examples.
    rather than the hostname displayed in the table above. The rest of the README
    will assume it's available on localhost.
 
-4. Open Prometheus at http://localhost:9090 and note that the `no_hits` alert
-   on the "Alerts" tab should be firing after 10 seconds, since the example
-   app is not receiving any traffic.
+4. Open Prometheus at [localhost:9090](http://localhost:9090) and note that
+   the `no_hits` alert on the "Alerts" tab should be firing after 10 seconds,
+   since the example app is not receiving any traffic.
 
-5. Open Alertmanager at http://localhost:9093 and note that `dev-pager` is
-   receiving an notification for `no_hits`.
+5. Open Alertmanager at [localhost:9093](http://localhost:9093) and note that
+   `dev-pager` is receiving an notification for `no_hits`.
 
 6. Run the following in a shell:
 
@@ -75,7 +75,7 @@ docs for examples.
    while true; do curl -s http://localhost:9999/; sleep 1; done
    ```
 
-   This will make requests to the app once per seconds, incrementing the
+   This will make requests to the app once per second, incrementing the
    `example_counter` counter. Note that the alert should be resolved in
    Prometheus and Alertmanager after a
    short delay.
