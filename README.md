@@ -67,7 +67,7 @@ docs for examples.
    since the example app is not receiving any traffic.
 
 5. Open Alertmanager at [localhost:9093](http://localhost:9093) and note that
-   `dev-pager` is receiving an notification for `no_hits`.
+   `dev-hipchat` is receiving an notification for `no_hits`.
 
 6. Run the following in a shell:
 
