@@ -1,0 +1,19 @@
+# See the following example config file for more options:
+# https://github.com/prometheus/alertmanager/blob/master/doc/examples/simple.yml
+
+global:
+
+route:
+  group_by: ['alertname', 'cluster', 'service']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+
+  # A default receiver
+  receiver: dev-pager
+
+receivers:
+- name: 'dev-pager'
+  pagerduty_configs:
+  - service_key: insert-pagerduty-key-here
+
