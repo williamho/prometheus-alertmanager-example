@@ -20,6 +20,8 @@ enablePlugins(
 dockerBaseImage := "anapsix/alpine-java:8_server-jre"
 dockerUpdateLatest := true
 dockerImageCreationTask := (publishLocal in Docker).value
+
+composeContainerStartTimeoutSeconds := 30
 composeFile := "../docker-compose.yml"
 composeServiceName := name.value
 
