@@ -2,6 +2,8 @@
 
 hit_rate=sum(rate(example_counter[10s]))
 
+# Detect if the rate is 0, or the metric is absent.
+# http://domudall.co.uk/prometheus-alerting-gotchas-detecting-no-events/
 ALERT no_hits
   IF (hit_rate == 0) OR absent(hit_rate) == 1
   FOR 10s
